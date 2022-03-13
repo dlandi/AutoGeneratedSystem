@@ -1,0 +1,28 @@
+﻿@page "/ApplicationUser/Create"
+<h3>Create</h3>
+
+<EditForm Model="@Model" OnValidSubmit="OnValidSubmitAsync">
+    <div class="mb-3">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">@nameof(Model.Name)</label>
+        <InputText class="form-control" @bind-Value="Model.Name"></InputText>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">@nameof(Model.Lastname)</label>
+        <InputText class="form-control" @bind-Value="Model.Lastname"></InputText>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">@nameof(Model.Email)</label>
+        <InputText class="form-control" @bind-Value="Model.Email"></InputText>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">@nameof(Model.Name)</label>
+        <InputDate class="form-control" @bind-Value="Model.BirthDate"></InputDate>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Create Application User</button>
+    </div>
+</EditForm>
