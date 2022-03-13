@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Store]
+(
+	[StoreId] BIGINT NOT NULL CONSTRAINT PK_Store PRIMARY KEY IDENTITY, 
+    [StoreName] NVARCHAR(50) NOT NULL
+)

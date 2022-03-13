@@ -6,6 +6,7 @@
         {
             public const string ApplicationUser = nameof(ApplicationUser);
             public const string ApplicationRole = nameof(ApplicationRole);
+            public const string Store = nameof(Store);
         }
     }
 }
