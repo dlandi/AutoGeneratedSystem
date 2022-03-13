@@ -2,6 +2,14 @@
 {
     public static class Constants
     {
+        public static class PageRoutes
+        {
+            public static class ApplicationUserRoutes
+            {
+                public const string List = "/ApplicationUser/List";
+                public const string Create = "/ApplicationUser/Create";
+            }
+        }
         public static class EntityNames
         {
             public const string ApplicationUser = nameof(ApplicationUser);
