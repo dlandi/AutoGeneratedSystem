@@ -5,6 +5,7 @@
         public static class EntityNames
         {
             public const string ApplicationUser = nameof(ApplicationUser);
+            public const string ApplicationRole = nameof(ApplicationRole);
         }
     }
 }
