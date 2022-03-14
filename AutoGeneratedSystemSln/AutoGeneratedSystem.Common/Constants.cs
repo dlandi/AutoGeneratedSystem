@@ -4,6 +4,10 @@
     {
         public static class PageRoutes
         {
+            public static class ApplicationRoleRoutes
+            {
+                public const string Create = "/ApplicationRole/Create";
+            }
             public static class ApplicationUserRoutes
             {
                 public const string List = "/ApplicationUser/List";
