@@ -15,5 +15,6 @@ builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
 
 builder.Services.AddTransient<HttpClientService>();
 builder.Services.AddTransient<ApplicationUserClientService>();
+builder.Services.AddTransient<ApplicationRoleClientService>();
 
 await builder.Build().RunAsync();
