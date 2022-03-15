@@ -1,2 +1,6 @@
 @page "/ApplicationRole/Create"
 <h3>ApplicationRole</h3>
+<EditForm Model="Model">
+<InputText class="form-control" bind-Value="Model.RoleName"/>
+<InputText class="form-control" bind-Value="Model.RoleDescription"/>
+</EditForm>
