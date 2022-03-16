@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <None Remove="Pages\ApplicationRole\AutoGeneratePages.txt" />
+    <None Remove="Pages\ApplicationUser\AutoGeneratePages.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="Pages\ApplicationRole\AutoGeneratePages.txt" />
+    <AdditionalFiles Include="Pages\ApplicationUser\AutoGeneratePages.txt" />
   </ItemGroup>
 
   <ItemGroup>
