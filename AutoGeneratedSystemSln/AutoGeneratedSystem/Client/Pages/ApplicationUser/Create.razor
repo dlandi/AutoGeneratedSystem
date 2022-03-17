@@ -1,5 +1,6 @@
 @page "/ApplicationUser/Create"
 <h3>ApplicationUser</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
 <div class="mb-3">
 <DataAnnotationsValidator></DataAnnotationsValidator>
