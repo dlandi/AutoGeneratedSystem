@@ -17,5 +17,6 @@ builder.Services.AddBlazoredToast();
 builder.Services.AddTransient<HttpClientService>();
 builder.Services.AddTransient<ApplicationUserClientService>();
 builder.Services.AddTransient<ApplicationRoleClientService>();
+builder.Services.AddTransient<CompanyClientService>();
 
 await builder.Build().RunAsync();
