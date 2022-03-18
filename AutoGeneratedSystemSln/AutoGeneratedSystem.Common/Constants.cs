@@ -11,6 +11,7 @@
             public static class ApplicationRoleRoutes
             {
                 public const string Create = "/ApplicationRole/Create";
+                public const string List = "/ApplicationRole/List";
             }
             public static class ApplicationUserRoutes
             {

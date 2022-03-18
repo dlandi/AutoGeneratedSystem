@@ -1,0 +1,17 @@
+@page "/Company/List"
+<h3>Company</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+@if (this.AllCompany != null)
+{
+foreach (var singleCompany in this.AllCompany)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@nameof(singleCompany.CompanyId):@singleCompany.CompanyId
+@nameof(singleCompany.Name):@singleCompany.Name
+@nameof(singleCompany.Country):@singleCompany.Country
+@nameof(singleCompany.NumberOfEmployees):@singleCompany.NumberOfEmployees
+</li>
+</ul>
+}
+}
