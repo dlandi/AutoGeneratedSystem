@@ -7,6 +7,7 @@
             public static class CompanyRoutes
             {
                 public const string Create = "/Company/Create";
+                public const string List = "/Company/List";
             }
             public static class ApplicationRoleRoutes
             {
@@ -15,8 +16,8 @@
             }
             public static class ApplicationUserRoutes
             {
-                public const string List = "/ApplicationUser/List";
                 public const string Create = "/ApplicationUser/Create";
+                public const string List = "/ApplicationUser/List";
             }
         }
         public static class EntityNames
