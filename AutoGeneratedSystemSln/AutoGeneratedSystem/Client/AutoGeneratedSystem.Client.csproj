@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\ApplicationUser\AutoGeneratePages.txt" />
     <None Remove="Pages\Company\AutoGeneratePages.txt" />
   </ItemGroup>
 
@@ -15,6 +16,7 @@
 
   <ItemGroup>
     <AdditionalFiles Include="Pages\ApplicationRole\AutoGeneratePages.txt" />
+    <AdditionalFiles Include="Pages\ApplicationUser\AutoGeneratePages.txt" />
     <AdditionalFiles Include="Pages\Company\AutoGeneratePages.txt" />
   </ItemGroup>
 

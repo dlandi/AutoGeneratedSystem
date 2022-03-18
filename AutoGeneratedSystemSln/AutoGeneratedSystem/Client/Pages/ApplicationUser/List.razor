@@ -1,0 +1,18 @@
+@page "/ApplicationUser/List"
+<h3>ApplicationUser</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+@if (this.AllApplicationUser != null)
+{
+foreach (var singleApplicationUser in this.AllApplicationUser)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@nameof(singleApplicationUser.ApplicationUserId):@singleApplicationUser.ApplicationUserId <br>
+@nameof(singleApplicationUser.Name):@singleApplicationUser.Name <br>
+@nameof(singleApplicationUser.Lastname):@singleApplicationUser.Lastname <br>
+@nameof(singleApplicationUser.Email):@singleApplicationUser.Email <br>
+@nameof(singleApplicationUser.BirthDate):@singleApplicationUser.BirthDate <br>
+</li>
+</ul>
+}
+}
