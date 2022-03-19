@@ -42,4 +42,4 @@ https://fairplaytube.pticostarica.com/Public/Videos/Details/ed67bf65cf
   * System.DateTimeOffset?, System.DateTimeOffset, System.DateTime?, System.DateTime
 
 ## Known Issues
-If you hav any project with *<EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles>*, the compilation may fail if you have the project located in a long path, to solve it remove the element or locate the project on the drive's root e.g. "C:\\"
+If you hav any project with *EmitCompilerGeneratedFiles* set to True, the compilation may fail if you have the project located in a long path, to solve it remove the element or locate the project on the drive's root e.g. "C:\\"
