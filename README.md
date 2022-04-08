@@ -39,6 +39,13 @@ https://fairplaytube.pticostarica.com/Public/Videos/Details/ed67bf65cf
 * Update{entityName}Async
 * Get{entityName}ByIdAsync
 
+### ControllersIncrementalGenerator
+* Create{entityName}
+* GetAll{entityName}
+* Delete{entityName}
+* Update{entityName}
+* Get{entityName}ById
+
 ## Limitations
 * The "BlazorPagesIncrementalGenerator" class, which create the Blazor pages, will only create data-input fields for the following data types
   * bool?, bool
