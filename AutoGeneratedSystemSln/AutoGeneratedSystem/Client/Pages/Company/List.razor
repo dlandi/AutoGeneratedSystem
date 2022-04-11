@@ -6,10 +6,11 @@ foreach (var singleCompany in this.AllCompany)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleCompany.CompanyId):@singleCompany.CompanyId <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button><br>
-@nameof(singleCompany.Name):@singleCompany.Name <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button><br>
-@nameof(singleCompany.Country):@singleCompany.Country <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button><br>
-@nameof(singleCompany.NumberOfEmployees):@singleCompany.NumberOfEmployees <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button><br>
+@nameof(singleCompany.CompanyId):@singleCompany.CompanyId <br>
+@nameof(singleCompany.Name):@singleCompany.Name <br>
+@nameof(singleCompany.Country):@singleCompany.Country <br>
+@nameof(singleCompany.NumberOfEmployees):@singleCompany.NumberOfEmployees <br>
+<button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button>
 </li>
 </ul>
 }
