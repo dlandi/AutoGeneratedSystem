@@ -6,11 +6,11 @@ foreach (var singleApplicationUser in this.AllApplicationUser)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleApplicationUser.ApplicationUserId):@singleApplicationUser.ApplicationUserId <br>
-@nameof(singleApplicationUser.Name):@singleApplicationUser.Name <br>
-@nameof(singleApplicationUser.Lastname):@singleApplicationUser.Lastname <br>
-@nameof(singleApplicationUser.Email):@singleApplicationUser.Email <br>
-@nameof(singleApplicationUser.BirthDate):@singleApplicationUser.BirthDate <br>
+@nameof(singleApplicationUser.ApplicationUserId):@singleApplicationUser.ApplicationUserId <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button><br>
+@nameof(singleApplicationUser.Name):@singleApplicationUser.Name <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button><br>
+@nameof(singleApplicationUser.Lastname):@singleApplicationUser.Lastname <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button><br>
+@nameof(singleApplicationUser.Email):@singleApplicationUser.Email <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button><br>
+@nameof(singleApplicationUser.BirthDate):@singleApplicationUser.BirthDate <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button><br>
 </li>
 </ul>
 }

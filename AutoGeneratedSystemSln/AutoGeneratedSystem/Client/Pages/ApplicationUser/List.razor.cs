@@ -30,5 +30,23 @@ finally
 this.IsLoading=false;
 }
 }
+private async Task DeleteApplicationUserAsync(ApplicationUserModel model)
+{
+try
+{
+this.IsLoading = true;
+await this.ApplicationUserClientService.DeleteApplicationUserAsync(model);
+this.AllApplicationUser = await ApplicationUserClientService.GetAllApplicationUserAsync();
+ToastService.ShowSuccess($"ApplicationUser with id {model.ApplicationUserId} has been deleted");
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+this.IsLoading = false;
+}
+}
 }
 }

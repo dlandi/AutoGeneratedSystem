@@ -6,9 +6,9 @@ foreach (var singleApplicationRole in this.AllApplicationRole)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleApplicationRole.ApplicationRoleId):@singleApplicationRole.ApplicationRoleId <br>
-@nameof(singleApplicationRole.RoleName):@singleApplicationRole.RoleName <br>
-@nameof(singleApplicationRole.RoleDescription):@singleApplicationRole.RoleDescription <br>
+@nameof(singleApplicationRole.ApplicationRoleId):@singleApplicationRole.ApplicationRoleId <button type="button" @onclick="@( async () => await DeleteApplicationRoleAsync(singleApplicationRole))">X</button><br>
+@nameof(singleApplicationRole.RoleName):@singleApplicationRole.RoleName <button type="button" @onclick="@( async () => await DeleteApplicationRoleAsync(singleApplicationRole))">X</button><br>
+@nameof(singleApplicationRole.RoleDescription):@singleApplicationRole.RoleDescription <button type="button" @onclick="@( async () => await DeleteApplicationRoleAsync(singleApplicationRole))">X</button><br>
 </li>
 </ul>
 }

@@ -30,5 +30,23 @@ finally
 this.IsLoading=false;
 }
 }
+private async Task DeleteCompanyAsync(CompanyModel model)
+{
+try
+{
+this.IsLoading = true;
+await this.CompanyClientService.DeleteCompanyAsync(model);
+this.AllCompany = await CompanyClientService.GetAllCompanyAsync();
+ToastService.ShowSuccess($"Company with id {model.CompanyId} has been deleted");
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+this.IsLoading = false;
+}
+}
 }
 }

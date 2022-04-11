@@ -30,5 +30,23 @@ finally
 this.IsLoading=false;
 }
 }
+private async Task DeleteApplicationRoleAsync(ApplicationRoleModel model)
+{
+try
+{
+this.IsLoading = true;
+await this.ApplicationRoleClientService.DeleteApplicationRoleAsync(model);
+this.AllApplicationRole = await ApplicationRoleClientService.GetAllApplicationRoleAsync();
+ToastService.ShowSuccess($"ApplicationRole with id {model.ApplicationRoleId} has been deleted");
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+this.IsLoading = false;
+}
+}
 }
 }
