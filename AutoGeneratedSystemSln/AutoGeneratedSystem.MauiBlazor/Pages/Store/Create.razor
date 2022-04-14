@@ -1,0 +1,15 @@
+<h3>Store</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
+<div class="mb-3">
+<DataAnnotationsValidator></DataAnnotationsValidator>
+<ValidationSummary></ValidationSummary>
+</div>
+<div class="mb-3">
+<label class="form-label">@nameof(Model.StoreName)</label>
+<InputText class="form-control" @bind-Value="Model.StoreName"/>
+</div>
+<div class="mb-3">
+<button class="btn btn-primary" type="submit">Submit</button>
+</div>
+</EditForm>

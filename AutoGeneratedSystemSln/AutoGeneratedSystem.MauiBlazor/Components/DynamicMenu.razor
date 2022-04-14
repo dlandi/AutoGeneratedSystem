@@ -1,0 +1,26 @@
+﻿<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    @foreach (var singleEntityName in EntityNames)
+    {
+        <div class="col">
+            <button type="button" class="btn btn-info rounded-circle"
+                @onclick="@( () => NavigateToListPageForEntity(singleEntityName))"
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                title="@singleEntityName">
+                <i class="bi bi-menu-up"></i>
+            </button>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public string[] EntityNames { get; set; }
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private void NavigateToListPageForEntity(string entityName)
+    {
+        this.NavigationManager.NavigateTo($"/{entityName}/List");
+    }
+}

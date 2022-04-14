@@ -1,0 +1,17 @@
+<h3>Company</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+@if (this.AllCompany != null)
+{
+foreach (var singleCompany in this.AllCompany)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@nameof(singleCompany.CompanyId):@singleCompany.CompanyId <br>
+@nameof(singleCompany.Name):@singleCompany.Name <br>
+@nameof(singleCompany.Country):@singleCompany.Country <br>
+@nameof(singleCompany.NumberOfEmployees):@singleCompany.NumberOfEmployees <br>
+<button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button>
+</li>
+</ul>
+}
+}

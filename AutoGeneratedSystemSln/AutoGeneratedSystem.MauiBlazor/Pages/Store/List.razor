@@ -1,0 +1,15 @@
+<h3>Store</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+@if (this.AllStore != null)
+{
+foreach (var singleStore in this.AllStore)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@nameof(singleStore.StoreId):@singleStore.StoreId <br>
+@nameof(singleStore.StoreName):@singleStore.StoreName <br>
+<button type="button" @onclick="@( async () => await DeleteStoreAsync(singleStore))">X</button>
+</li>
+</ul>
+}
+}

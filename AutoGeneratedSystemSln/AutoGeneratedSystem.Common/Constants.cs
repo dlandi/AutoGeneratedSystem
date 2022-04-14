@@ -4,6 +4,11 @@
     {
         public static class PageRoutes
         {
+            public static class StoreRoutes
+            {
+                public const string Create = "/Store/Create";
+                public const string List = "/Store/List";
+            }
             public static class CompanyRoutes
             {
                 public const string Create = "/Company/Create";
