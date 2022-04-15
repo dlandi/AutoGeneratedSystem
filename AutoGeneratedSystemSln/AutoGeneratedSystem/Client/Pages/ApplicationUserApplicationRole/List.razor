@@ -1,5 +1,14 @@
 <h3>ApplicationUserApplicationRole</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationUserApplicationRole"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create ApplicationUserApplicationRole">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
 @if (this.AllApplicationUserApplicationRole != null)
 {
 foreach (var singleApplicationUserApplicationRole in this.AllApplicationUserApplicationRole)
@@ -14,3 +23,4 @@ foreach (var singleApplicationUserApplicationRole in this.AllApplicationUserAppl
 </ul>
 }
 }
+</div>

@@ -1,5 +1,14 @@
 <h3>Company</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"Company"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create Company">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
 @if (this.AllCompany != null)
 {
 foreach (var singleCompany in this.AllCompany)
@@ -15,3 +24,4 @@ foreach (var singleCompany in this.AllCompany)
 </ul>
 }
 }
+</div>

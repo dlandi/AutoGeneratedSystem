@@ -12,6 +12,7 @@ public partial class List
 ApplicationRoleClientService ApplicationRoleClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private ApplicationRoleModel[] AllApplicationRole { get; set; }
 private bool IsLoading {get; set;}
 protected override async Task OnInitializedAsync()
