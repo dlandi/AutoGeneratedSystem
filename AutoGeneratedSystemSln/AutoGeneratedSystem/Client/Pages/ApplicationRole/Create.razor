@@ -1,4 +1,10 @@
 <h3>ApplicationRole</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationRole"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="List ApplicationRole">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
 <div class="mb-3">

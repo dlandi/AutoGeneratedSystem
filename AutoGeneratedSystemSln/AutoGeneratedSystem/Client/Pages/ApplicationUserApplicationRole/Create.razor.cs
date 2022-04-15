@@ -12,6 +12,7 @@ public partial class Create
 ApplicationUserApplicationRoleClientService ApplicationUserApplicationRoleClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private CreateApplicationUserApplicationRoleModel Model {get;set;} = new();
 private bool IsLoading {get;set;} = false;
 private long ApplicationUserId { get; set; }

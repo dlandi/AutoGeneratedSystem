@@ -6,8 +6,8 @@
         {
             public static class ApplicationUserApplicationRoleRoutes
             {
-                public const string Create = "/ApplicationUserApplicationRoleRoutes/Create";
-                public const string List = "/ApplicationUserApplicationRoleRoutes/List";
+                public const string Create = "/ApplicationUserApplicationRole/Create";
+                public const string List = "/ApplicationUserApplicationRole/List";
             }
             public static class StoreRoutes
             {
