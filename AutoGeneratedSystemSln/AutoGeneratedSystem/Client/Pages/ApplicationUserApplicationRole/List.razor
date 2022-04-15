@@ -1,0 +1,16 @@
+<h3>ApplicationUserApplicationRole</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+@if (this.AllApplicationUserApplicationRole != null)
+{
+foreach (var singleApplicationUserApplicationRole in this.AllApplicationUserApplicationRole)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@nameof(singleApplicationUserApplicationRole.ApplicationUserApplicationRoleId):@singleApplicationUserApplicationRole.ApplicationUserApplicationRoleId <br>
+@nameof(singleApplicationUserApplicationRole.ApplicationUserId):@singleApplicationUserApplicationRole.ApplicationUserId <br>
+@nameof(singleApplicationUserApplicationRole.ApplicationRoleId):@singleApplicationUserApplicationRole.ApplicationRoleId <br>
+<button type="button" @onclick="@( async () => await DeleteApplicationUserApplicationRoleAsync(singleApplicationUserApplicationRole))">X</button>
+</li>
+</ul>
+}
+}

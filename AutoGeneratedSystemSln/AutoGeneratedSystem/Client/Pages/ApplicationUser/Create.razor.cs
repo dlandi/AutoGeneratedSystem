@@ -14,6 +14,21 @@ ApplicationUserClientService ApplicationUserClientService { get; set; }
 private IToastService ToastService { get;set; }
 private CreateApplicationUserModel Model {get;set;} = new();
 private bool IsLoading {get;set;} = false;
+protected override async Task OnInitializedAsync()
+{
+try
+{
+IsLoading = true;
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+IsLoading = false;
+}
+}
 private async Task OnValidSubmitAsync()
 {
 try
