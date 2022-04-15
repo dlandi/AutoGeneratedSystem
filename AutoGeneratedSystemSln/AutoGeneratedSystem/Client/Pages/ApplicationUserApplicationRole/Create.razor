@@ -10,6 +10,7 @@
 <div class="mb-3">
 <label class="form-label">@nameof(Model.ApplicationUserId)</label>
 <InputSelect class="form-control" @bind-Value="Model.ApplicationUserId">
+<option value="">Select ApplicationUser...</option>
 @foreach (var singleApplicationUserItem in this.ApplicationUserModelItems)
 {
 <option value="@singleApplicationUserItem.ApplicationUserId">@singleApplicationUserItem.Name</option>
@@ -22,6 +23,7 @@
 <div class="mb-3">
 <label class="form-label">@nameof(Model.ApplicationRoleId)</label>
 <InputSelect class="form-control" @bind-Value="Model.ApplicationRoleId">
+<option value="">Select ApplicationRole...</option>
 @foreach (var singleApplicationRoleItem in this.ApplicationRoleModelItems)
 {
 <option value="@singleApplicationRoleItem.ApplicationRoleId">@singleApplicationRoleItem.RoleName</option>
