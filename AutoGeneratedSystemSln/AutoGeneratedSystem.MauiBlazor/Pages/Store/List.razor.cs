@@ -12,6 +12,7 @@ public partial class List
 StoreClientService StoreClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private StoreModel[] AllStore { get; set; }
 private bool IsLoading {get; set;}
 protected override async Task OnInitializedAsync()

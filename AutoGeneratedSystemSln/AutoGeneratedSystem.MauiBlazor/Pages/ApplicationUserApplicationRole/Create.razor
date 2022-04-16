@@ -1,0 +1,43 @@
+<h3>@("ApplicationUserApplicationRole".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationUserApplicationRole"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List ApplicationUserApplicationRole".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
+<div class="mb-3">
+<DataAnnotationsValidator></DataAnnotationsValidator>
+<ValidationSummary></ValidationSummary>
+</div>
+@if (this.ApplicationUserModelItems != null)
+{
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ApplicationUserId).Humanize().Titleize())</label>
+<InputSelect class="form-control" @bind-Value="Model.ApplicationUserId">
+<option value="">Select ApplicationUser...</option>
+@foreach (var singleApplicationUserItem in this.ApplicationUserModelItems)
+{
+<option value="@singleApplicationUserItem.ApplicationUserId">@singleApplicationUserItem.Name</option>
+}
+</InputSelect>
+</div>
+}
+@if (this.ApplicationRoleModelItems != null)
+{
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ApplicationRoleId).Humanize().Titleize())</label>
+<InputSelect class="form-control" @bind-Value="Model.ApplicationRoleId">
+<option value="">Select ApplicationRole...</option>
+@foreach (var singleApplicationRoleItem in this.ApplicationRoleModelItems)
+{
+<option value="@singleApplicationRoleItem.ApplicationRoleId">@singleApplicationRoleItem.RoleName</option>
+}
+</InputSelect>
+</div>
+}
+<div class="mb-3">
+<button class="btn btn-primary" type="submit">Submit</button>
+</div>
+</EditForm>

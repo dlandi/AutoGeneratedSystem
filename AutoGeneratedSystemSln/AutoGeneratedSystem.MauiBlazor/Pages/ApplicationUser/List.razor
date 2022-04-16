@@ -1,18 +1,28 @@
-<h3>ApplicationUser</h3>
+<h3>@("ApplicationUser".Pluralize().Humanize().Titleize())</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationUser"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create ApplicationUser">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
 @if (this.AllApplicationUser != null)
 {
 foreach (var singleApplicationUser in this.AllApplicationUser)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleApplicationUser.ApplicationUserId):@singleApplicationUser.ApplicationUserId <br>
-@nameof(singleApplicationUser.Name):@singleApplicationUser.Name <br>
-@nameof(singleApplicationUser.Lastname):@singleApplicationUser.Lastname <br>
-@nameof(singleApplicationUser.Email):@singleApplicationUser.Email <br>
-@nameof(singleApplicationUser.BirthDate):@singleApplicationUser.BirthDate <br>
+@(nameof(singleApplicationUser.ApplicationUserId).Humanize().Titleize()):@singleApplicationUser.ApplicationUserId <br>
+@(nameof(singleApplicationUser.Name).Humanize().Titleize()):@singleApplicationUser.Name <br>
+@(nameof(singleApplicationUser.Lastname).Humanize().Titleize()):@singleApplicationUser.Lastname <br>
+@(nameof(singleApplicationUser.Email).Humanize().Titleize()):@singleApplicationUser.Email <br>
+@(nameof(singleApplicationUser.BirthDate).Humanize().Titleize()):@singleApplicationUser.BirthDate <br>
 <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button>
 </li>
 </ul>
 }
 }
+</div>

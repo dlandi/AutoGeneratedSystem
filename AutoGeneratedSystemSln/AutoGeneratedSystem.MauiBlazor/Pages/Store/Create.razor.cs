@@ -12,14 +12,31 @@ public partial class Create
 StoreClientService StoreClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private CreateStoreModel Model {get;set;} = new();
 private bool IsLoading {get;set;} = false;
+protected override async Task OnInitializedAsync()
+{
+try
+{
+IsLoading = true;
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+IsLoading = false;
+}
+}
 private async Task OnValidSubmitAsync()
 {
 try
 {
 IsLoading = true;
 var result = await this.StoreClientService.CreateStoreAsync(this.Model);
+this.NavigationManager.NavigateTo("/Store/List");
 ToastService.ShowSuccess("New Store has been created");
 }
 catch (Exception ex)

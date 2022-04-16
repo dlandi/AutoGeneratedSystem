@@ -1,4 +1,10 @@
-<h3>ApplicationUser</h3>
+<h3>@("ApplicationUser".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationUser"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List ApplicationUser".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
 <div class="mb-3">
@@ -6,35 +12,35 @@
 <ValidationSummary></ValidationSummary>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.Name)</label>
+<label class="form-label">@(nameof(Model.Name).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.Name"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.Lastname)</label>
+<label class="form-label">@(nameof(Model.Lastname).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.Lastname"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.Email)</label>
+<label class="form-label">@(nameof(Model.Email).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.Email"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.TestIntId)</label>
+<label class="form-label">@(nameof(Model.TestIntId).Humanize().Titleize())</label>
 <InputNumber class="form-control" @bind-Value="Model.TestIntId"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.TestLongId)</label>
+<label class="form-label">@(nameof(Model.TestLongId).Humanize().Titleize())</label>
 <InputNumber class="form-control" @bind-Value="Model.TestLongId"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.TestDoubleId)</label>
+<label class="form-label">@(nameof(Model.TestDoubleId).Humanize().Titleize())</label>
 <InputNumber class="form-control" @bind-Value="Model.TestDoubleId"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.TestDecimalId)</label>
+<label class="form-label">@(nameof(Model.TestDecimalId).Humanize().Titleize())</label>
 <InputNumber class="form-control" @bind-Value="Model.TestDecimalId"/>
 </div>
 <div class="mb-3">
-<label class="form-check-label">@nameof(Model.IsApproved)</label>
+<label class="form-check-label">@(nameof(Model.IsApproved).Humanize().Titleize())</label>
 <InputCheckbox class="form-check-input" @bind-Value="Model.IsApproved"/>
 </div>
 <div class="mb-3">

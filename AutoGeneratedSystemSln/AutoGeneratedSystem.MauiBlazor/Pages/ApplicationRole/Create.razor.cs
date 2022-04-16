@@ -12,14 +12,31 @@ public partial class Create
 ApplicationRoleClientService ApplicationRoleClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private CreateApplicationRoleModel Model {get;set;} = new();
 private bool IsLoading {get;set;} = false;
+protected override async Task OnInitializedAsync()
+{
+try
+{
+IsLoading = true;
+}
+catch (Exception ex)
+{
+ToastService.ShowError(ex.Message);
+}
+finally
+{
+IsLoading = false;
+}
+}
 private async Task OnValidSubmitAsync()
 {
 try
 {
 IsLoading = true;
 var result = await this.ApplicationRoleClientService.CreateApplicationRoleAsync(this.Model);
+this.NavigationManager.NavigateTo("/ApplicationRole/List");
 ToastService.ShowSuccess("New ApplicationRole has been created");
 }
 catch (Exception ex)

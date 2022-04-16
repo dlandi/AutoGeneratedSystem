@@ -1,17 +1,27 @@
-<h3>Company</h3>
+<h3>@("Company".Pluralize().Humanize().Titleize())</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"Company"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create Company">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
 @if (this.AllCompany != null)
 {
 foreach (var singleCompany in this.AllCompany)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleCompany.CompanyId):@singleCompany.CompanyId <br>
-@nameof(singleCompany.Name):@singleCompany.Name <br>
-@nameof(singleCompany.Country):@singleCompany.Country <br>
-@nameof(singleCompany.NumberOfEmployees):@singleCompany.NumberOfEmployees <br>
+@(nameof(singleCompany.CompanyId).Humanize().Titleize()):@singleCompany.CompanyId <br>
+@(nameof(singleCompany.Name).Humanize().Titleize()):@singleCompany.Name <br>
+@(nameof(singleCompany.Country).Humanize().Titleize()):@singleCompany.Country <br>
+@(nameof(singleCompany.NumberOfEmployees).Humanize().Titleize()):@singleCompany.NumberOfEmployees <br>
 <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button>
 </li>
 </ul>
 }
 }
+</div>

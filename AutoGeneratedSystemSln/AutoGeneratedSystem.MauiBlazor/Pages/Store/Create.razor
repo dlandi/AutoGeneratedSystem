@@ -1,4 +1,10 @@
-<h3>Store</h3>
+<h3>@("Store".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"Store"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List Store".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
 <div class="mb-3">
@@ -6,7 +12,7 @@
 <ValidationSummary></ValidationSummary>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.StoreName)</label>
+<label class="form-label">@(nameof(Model.StoreName).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.StoreName"/>
 </div>
 <div class="mb-3">

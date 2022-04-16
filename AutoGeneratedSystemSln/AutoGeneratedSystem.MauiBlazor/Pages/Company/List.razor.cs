@@ -12,6 +12,7 @@ public partial class List
 CompanyClientService CompanyClientService { get; set; }
 [Inject]
 private IToastService ToastService { get;set; }
+[Inject] private NavigationManager NavigationManager { get; set; }
 private CompanyModel[] AllCompany { get; set; }
 private bool IsLoading {get; set;}
 protected override async Task OnInitializedAsync()

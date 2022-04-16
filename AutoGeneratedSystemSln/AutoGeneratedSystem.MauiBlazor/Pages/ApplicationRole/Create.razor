@@ -1,4 +1,10 @@
-<h3>ApplicationRole</h3>
+<h3>@("ApplicationRole".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationRole"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List ApplicationRole".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
 <div class="mb-3">
@@ -6,11 +12,11 @@
 <ValidationSummary></ValidationSummary>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.RoleName)</label>
+<label class="form-label">@(nameof(Model.RoleName).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.RoleName"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.RoleDescription)</label>
+<label class="form-label">@(nameof(Model.RoleDescription).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.RoleDescription"/>
 </div>
 <div class="mb-3">

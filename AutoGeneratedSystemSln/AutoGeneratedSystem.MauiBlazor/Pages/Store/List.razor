@@ -1,15 +1,25 @@
-<h3>Store</h3>
+<h3>@("Store".Pluralize().Humanize().Titleize())</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"Store"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create Store">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
 @if (this.AllStore != null)
 {
 foreach (var singleStore in this.AllStore)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleStore.StoreId):@singleStore.StoreId <br>
-@nameof(singleStore.StoreName):@singleStore.StoreName <br>
+@(nameof(singleStore.StoreId).Humanize().Titleize()):@singleStore.StoreId <br>
+@(nameof(singleStore.StoreName).Humanize().Titleize()):@singleStore.StoreName <br>
 <button type="button" @onclick="@( async () => await DeleteStoreAsync(singleStore))">X</button>
 </li>
 </ul>
 }
 }
+</div>

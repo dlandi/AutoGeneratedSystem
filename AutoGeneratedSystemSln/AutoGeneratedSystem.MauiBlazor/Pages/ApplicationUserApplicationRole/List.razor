@@ -1,0 +1,26 @@
+<h3>@("ApplicationUserApplicationRole".Pluralize().Humanize().Titleize())</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationUserApplicationRole"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create ApplicationUserApplicationRole">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
+@if (this.AllApplicationUserApplicationRole != null)
+{
+foreach (var singleApplicationUserApplicationRole in this.AllApplicationUserApplicationRole)
+{
+<ul class="list-group">
+<li class="list-group-item">
+@(nameof(singleApplicationUserApplicationRole.ApplicationUserApplicationRoleId).Humanize().Titleize()):@singleApplicationUserApplicationRole.ApplicationUserApplicationRoleId <br>
+@(nameof(singleApplicationUserApplicationRole.ApplicationUserId).Humanize().Titleize()):@singleApplicationUserApplicationRole.ApplicationUserId <br>
+@(nameof(singleApplicationUserApplicationRole.ApplicationRoleId).Humanize().Titleize()):@singleApplicationUserApplicationRole.ApplicationRoleId <br>
+<button type="button" @onclick="@( async () => await DeleteApplicationUserApplicationRoleAsync(singleApplicationUserApplicationRole))">X</button>
+</li>
+</ul>
+}
+}
+</div>
