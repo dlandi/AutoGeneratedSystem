@@ -11,6 +11,7 @@
     <None Remove="Pages\ApplicationUserApplicationRole\AutoGeneratePages.txt" />
     <None Remove="Pages\ApplicationUser\AutoGeneratePages.txt" />
     <None Remove="Pages\Company\AutoGeneratePages.txt" />
+    <None Remove="Pages\Store\AutoGeneratePages.txt" />
   </ItemGroup>
 
 
@@ -20,6 +21,7 @@
     <AdditionalFiles Include="Pages\ApplicationUserApplicationRole\AutoGeneratePages.txt" />
     <AdditionalFiles Include="Pages\ApplicationUser\AutoGeneratePages.txt" />
     <AdditionalFiles Include="Pages\Company\AutoGeneratePages.txt" />
+    <AdditionalFiles Include="Pages\Store\AutoGeneratePages.txt" />
   </ItemGroup>
 
   <ItemGroup>
