@@ -36,6 +36,7 @@ try
 {
 IsLoading = true;
 var result = await this.ApplicationUserClientService.CreateApplicationUserAsync(this.Model);
+this.NavigationManager.NavigateTo("/ApplicationUser/List");
 ToastService.ShowSuccess("New ApplicationUser has been created");
 }
 catch (Exception ex)

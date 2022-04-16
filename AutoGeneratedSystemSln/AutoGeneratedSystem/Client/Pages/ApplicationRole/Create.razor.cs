@@ -36,6 +36,7 @@ try
 {
 IsLoading = true;
 var result = await this.ApplicationRoleClientService.CreateApplicationRoleAsync(this.Model);
+this.NavigationManager.NavigateTo("/ApplicationRole/List");
 ToastService.ShowSuccess("New ApplicationRole has been created");
 }
 catch (Exception ex)

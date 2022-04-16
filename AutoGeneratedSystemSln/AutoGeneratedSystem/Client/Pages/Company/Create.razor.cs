@@ -36,6 +36,7 @@ try
 {
 IsLoading = true;
 var result = await this.CompanyClientService.CreateCompanyAsync(this.Model);
+this.NavigationManager.NavigateTo("/Company/List");
 ToastService.ShowSuccess("New Company has been created");
 }
 catch (Exception ex)

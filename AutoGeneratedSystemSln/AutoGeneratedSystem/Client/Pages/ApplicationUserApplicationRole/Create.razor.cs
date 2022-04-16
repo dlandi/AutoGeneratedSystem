@@ -44,8 +44,7 @@ try
 {
 IsLoading = true;
 var result = await this.ApplicationUserApplicationRoleClientService.CreateApplicationUserApplicationRoleAsync(this.Model);
-this.ApplicationUserModelItems = await ApplicationUserClientService.GetAllApplicationUserAsync();
-this.ApplicationRoleModelItems = await ApplicationRoleClientService.GetAllApplicationRoleAsync();
+this.NavigationManager.NavigateTo("/ApplicationUserApplicationRole/List");
 ToastService.ShowSuccess("New ApplicationUserApplicationRole has been created");
 }
 catch (Exception ex)

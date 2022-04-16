@@ -36,6 +36,7 @@ try
 {
 IsLoading = true;
 var result = await this.StoreClientService.CreateStoreAsync(this.Model);
+this.NavigationManager.NavigateTo("/Store/List");
 ToastService.ShowSuccess("New Store has been created");
 }
 catch (Exception ex)
