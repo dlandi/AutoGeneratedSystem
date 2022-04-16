@@ -1,8 +1,8 @@
-<h3>Company</h3>
+<h3>@("Company".Humanize().Titleize())</h3>
 <button type="button" class="btn btn - info rounded - circle"
 @onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"Company"))"
 data-bs-toggle="tooltip" data-bs-placement="top"
-title="List Company">
+title="@("List Company".Humanize().Titleize())">
 <i class="bi bi-list" style="font-size:large"></i>
 </button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
@@ -12,15 +12,15 @@ title="List Company">
 <ValidationSummary></ValidationSummary>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.Name)</label>
+<label class="form-label">@(nameof(Model.Name).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.Name"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.Country)</label>
+<label class="form-label">@(nameof(Model.Country).Humanize().Titleize())</label>
 <InputText class="form-control" @bind-Value="Model.Country"/>
 </div>
 <div class="mb-3">
-<label class="form-label">@nameof(Model.NumberOfEmployees)</label>
+<label class="form-label">@(nameof(Model.NumberOfEmployees).Humanize().Titleize())</label>
 <InputNumber class="form-control" @bind-Value="Model.NumberOfEmployees"/>
 </div>
 <div class="mb-3">

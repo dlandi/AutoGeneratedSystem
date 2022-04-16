@@ -1,7 +1,7 @@
-<h3>ApplicationRole</h3>
+<h3>@("ApplicationRole".Pluralize().Humanize().Titleize())</h3>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
 <div class="mb-3">
-<button type="button" class="btn btn - info rounded - circle"
+<button type="button" class="btn btn-info rounded-circle"
 @onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationRole"))"
 data-bs-toggle="tooltip" data-bs-placement="top"
 title="Create ApplicationRole">
@@ -15,9 +15,9 @@ foreach (var singleApplicationRole in this.AllApplicationRole)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@nameof(singleApplicationRole.ApplicationRoleId):@singleApplicationRole.ApplicationRoleId <br>
-@nameof(singleApplicationRole.RoleName):@singleApplicationRole.RoleName <br>
-@nameof(singleApplicationRole.RoleDescription):@singleApplicationRole.RoleDescription <br>
+@(nameof(singleApplicationRole.ApplicationRoleId).Humanize().Titleize()):@singleApplicationRole.ApplicationRoleId <br>
+@(nameof(singleApplicationRole.RoleName).Humanize().Titleize()):@singleApplicationRole.RoleName <br>
+@(nameof(singleApplicationRole.RoleDescription).Humanize().Titleize()):@singleApplicationRole.RoleDescription <br>
 <button type="button" @onclick="@( async () => await DeleteApplicationRoleAsync(singleApplicationRole))">X</button>
 </li>
 </ul>

@@ -1,8 +1,8 @@
-<h3>ApplicationUserApplicationRole</h3>
+<h3>@("ApplicationUserApplicationRole".Humanize().Titleize())</h3>
 <button type="button" class="btn btn - info rounded - circle"
 @onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationUserApplicationRole"))"
 data-bs-toggle="tooltip" data-bs-placement="top"
-title="List ApplicationUserApplicationRole">
+title="@("List ApplicationUserApplicationRole".Humanize().Titleize())">
 <i class="bi bi-list" style="font-size:large"></i>
 </button>
 <LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
@@ -14,7 +14,7 @@ title="List ApplicationUserApplicationRole">
 @if (this.ApplicationUserModelItems != null)
 {
 <div class="mb-3">
-<label class="form-label">@nameof(Model.ApplicationUserId)</label>
+<label class="form-label">@(nameof(Model.ApplicationUserId).Humanize().Titleize())</label>
 <InputSelect class="form-control" @bind-Value="Model.ApplicationUserId">
 <option value="">Select ApplicationUser...</option>
 @foreach (var singleApplicationUserItem in this.ApplicationUserModelItems)
@@ -27,7 +27,7 @@ title="List ApplicationUserApplicationRole">
 @if (this.ApplicationRoleModelItems != null)
 {
 <div class="mb-3">
-<label class="form-label">@nameof(Model.ApplicationRoleId)</label>
+<label class="form-label">@(nameof(Model.ApplicationRoleId).Humanize().Titleize())</label>
 <InputSelect class="form-control" @bind-Value="Model.ApplicationRoleId">
 <option value="">Select ApplicationRole...</option>
 @foreach (var singleApplicationRoleItem in this.ApplicationRoleModelItems)
