@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>5dda70b4-5fcd-4ce0-9017-b6e147426a28</UserSecretsId>
+	  <EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
 	<ItemGroup>
