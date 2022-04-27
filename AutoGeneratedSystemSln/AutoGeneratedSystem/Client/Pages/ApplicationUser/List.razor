@@ -15,11 +15,32 @@ foreach (var singleApplicationUser in this.AllApplicationUser)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@(nameof(singleApplicationUser.ApplicationUserId).Humanize().Titleize()):@singleApplicationUser.ApplicationUserId <br>
-@(nameof(singleApplicationUser.Name).Humanize().Titleize()):@singleApplicationUser.Name <br>
-@(nameof(singleApplicationUser.Lastname).Humanize().Titleize()):@singleApplicationUser.Lastname <br>
-@(nameof(singleApplicationUser.Email).Humanize().Titleize()):@singleApplicationUser.Email <br>
-@(nameof(singleApplicationUser.BirthDate).Humanize().Titleize()):@singleApplicationUser.BirthDate <br>
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.ApplicationUserId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUser.ApplicationUserId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.Name).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUser.Name</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.Lastname).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUser.Lastname</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.Email).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUser.Email</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.BirthDate).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUser.BirthDate</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUser.ProfileImageUrl).Humanize().Titleize())</strong></label>
+<img class="img-fluid" src="@singleApplicationUser.ProfileImageUrl" />
+</li>
+</ul>
 <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button>
 </li>
 </ul>

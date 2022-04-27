@@ -15,9 +15,20 @@ foreach (var singleApplicationRole in this.AllApplicationRole)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@(nameof(singleApplicationRole.ApplicationRoleId).Humanize().Titleize()):@singleApplicationRole.ApplicationRoleId <br>
-@(nameof(singleApplicationRole.RoleName).Humanize().Titleize()):@singleApplicationRole.RoleName <br>
-@(nameof(singleApplicationRole.RoleDescription).Humanize().Titleize()):@singleApplicationRole.RoleDescription <br>
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationRole.ApplicationRoleId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationRole.ApplicationRoleId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationRole.RoleName).Humanize().Titleize())</strong></label>
+<span>@singleApplicationRole.RoleName</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationRole.RoleDescription).Humanize().Titleize())</strong></label>
+<span>@singleApplicationRole.RoleDescription</span>
+</li>
+</ul>
 <button type="button" @onclick="@( async () => await DeleteApplicationRoleAsync(singleApplicationRole))">X</button>
 </li>
 </ul>

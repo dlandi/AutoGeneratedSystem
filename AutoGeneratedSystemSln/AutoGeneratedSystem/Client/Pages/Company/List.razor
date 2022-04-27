@@ -15,10 +15,24 @@ foreach (var singleCompany in this.AllCompany)
 {
 <ul class="list-group">
 <li class="list-group-item">
-@(nameof(singleCompany.CompanyId).Humanize().Titleize()):@singleCompany.CompanyId <br>
-@(nameof(singleCompany.Name).Humanize().Titleize()):@singleCompany.Name <br>
-@(nameof(singleCompany.Country).Humanize().Titleize()):@singleCompany.Country <br>
-@(nameof(singleCompany.NumberOfEmployees).Humanize().Titleize()):@singleCompany.NumberOfEmployees <br>
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleCompany.CompanyId).Humanize().Titleize())</strong></label>
+<span>@singleCompany.CompanyId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleCompany.Name).Humanize().Titleize())</strong></label>
+<span>@singleCompany.Name</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleCompany.Country).Humanize().Titleize())</strong></label>
+<span>@singleCompany.Country</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleCompany.NumberOfEmployees).Humanize().Titleize())</strong></label>
+<span>@singleCompany.NumberOfEmployees</span>
+</li>
+</ul>
 <button type="button" @onclick="@( async () => await DeleteCompanyAsync(singleCompany))">X</button>
 </li>
 </ul>

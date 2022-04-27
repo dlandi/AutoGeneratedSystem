@@ -28,4 +28,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ApplicationUserApplicationRoleId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e4b5590a-be3d-4311-b514-280a9d2f4621" ChangeDateTime="04/27/2022 20:52:37">
+    <Property Name="ElementName" Value="[dbo].[ApplicationUser].[ProfileImage]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ApplicationUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProfileImageUrl" />
+  </Operation>
 </Operations>

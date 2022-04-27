@@ -20,6 +20,7 @@ foreach (var singleApplicationUser in this.AllApplicationUser)
 @(nameof(singleApplicationUser.Lastname).Humanize().Titleize()):@singleApplicationUser.Lastname <br>
 @(nameof(singleApplicationUser.Email).Humanize().Titleize()):@singleApplicationUser.Email <br>
 @(nameof(singleApplicationUser.BirthDate).Humanize().Titleize()):@singleApplicationUser.BirthDate <br>
+@(nameof(singleApplicationUser.ProfileImageUrl).Humanize().Titleize()):@singleApplicationUser.ProfileImageUrl <br>
 <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button>
 </li>
 </ul>
