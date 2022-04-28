@@ -1,0 +1,29 @@
+<h3>@("Product".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"Product"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List Product".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
+<div class="mb-3">
+<DataAnnotationsValidator></DataAnnotationsValidator>
+<ValidationSummary></ValidationSummary>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.Name).Humanize().Titleize())</label>
+<InputText class="form-control" @bind-Value="Model.Name"/>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ImageUrl).Humanize().Titleize())</label>
+<InputText class="form-control" @bind-Value="Model.ImageUrl"/>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.UnitPrice).Humanize().Titleize())</label>
+<InputNumber class="form-control" @bind-Value="Model.UnitPrice"/>
+</div>
+<div class="mb-3">
+<button class="btn btn-primary" type="submit">Submit</button>
+</div>
+</EditForm>

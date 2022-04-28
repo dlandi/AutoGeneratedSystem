@@ -1,0 +1,41 @@
+<h3>@("Product".Pluralize().Humanize().Titleize())</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"Product"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create Product">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
+@if (this.AllProduct != null)
+{
+foreach (var singleProduct in this.AllProduct)
+{
+<ul class="list-group">
+<li class="list-group-item">
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleProduct.ProductId).Humanize().Titleize())</strong></label>
+<span>@singleProduct.ProductId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleProduct.Name).Humanize().Titleize())</strong></label>
+<span>@singleProduct.Name</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleProduct.ImageUrl).Humanize().Titleize())</strong></label>
+<a href="@singleProduct.ImageUrl" target="_blank"><img class="img-fluid" src="@singleProduct.ImageUrl" /></a>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleProduct.UnitPrice).Humanize().Titleize())</strong></label>
+<span>@singleProduct.UnitPrice</span>
+</li>
+</ul>
+<button type="button" @onclick="@( async () => await DeleteProductAsync(singleProduct))">X</button>
+</li>
+</ul>
+}
+}
+</div>

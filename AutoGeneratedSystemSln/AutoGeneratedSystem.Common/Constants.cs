@@ -4,6 +4,11 @@
     {
         public static class PageRoutes
         {
+            public static class ProductRoutes
+            {
+                public const string Create = "/Product/Create";
+                public const string List = "/Product/List";
+            }
             public static class ApplicationUserApplicationRoleRoutes
             {
                 public const string Create = "/ApplicationUserApplicationRole/Create";
@@ -37,6 +42,7 @@
             public const string Store = nameof(Store);
             public const string Company = nameof(Company);
             public const string ApplicationUserApplicationRole = nameof(ApplicationUserApplicationRole);
+            public const string Product = nameof(Product);
         }
     }
 }

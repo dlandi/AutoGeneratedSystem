@@ -20,5 +20,6 @@ builder.Services.AddTransient<ApplicationRoleClientService>();
 builder.Services.AddTransient<CompanyClientService>();
 builder.Services.AddTransient<ApplicationUserApplicationRoleClientService>();
 builder.Services.AddTransient<StoreClientService>();
+builder.Services.AddTransient<ProductClientService>();
 
 await builder.Build().RunAsync();
