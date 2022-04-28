@@ -38,7 +38,7 @@ foreach (var singleApplicationUser in this.AllApplicationUser)
 </li>
 <li class="list-group-item">
 <label class="form-label"><strong>@(nameof(singleApplicationUser.ProfileImageUrl).Humanize().Titleize())</strong></label>
-<img class="img-fluid" src="@singleApplicationUser.ProfileImageUrl" />
+<a href="@singleApplicationUser.ProfileImageUrl" target="_blank"><img class="img-fluid" src="@singleApplicationUser.ProfileImageUrl" /></a>
 </li>
 </ul>
 <button type="button" @onclick="@( async () => await DeleteApplicationUserAsync(singleApplicationUser))">X</button>
