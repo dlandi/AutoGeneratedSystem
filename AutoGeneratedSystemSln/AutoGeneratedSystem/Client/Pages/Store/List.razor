@@ -21,8 +21,12 @@ foreach (var singleStore in this.AllStore)
 <span>@singleStore.StoreId</span>
 </li>
 <li class="list-group-item">
-<label class="form-label"><strong>@(nameof(singleStore.StoreName).Humanize().Titleize())</strong></label>
-<span>@singleStore.StoreName</span>
+<label class="form-label"><strong>@(nameof(singleStore.Name).Humanize().Titleize())</strong></label>
+<span>@singleStore.Name</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleStore.ImageUrl).Humanize().Titleize())</strong></label>
+<a href="@singleStore.ImageUrl" target="_blank"><img class="img-fluid" src="@singleStore.ImageUrl" /></a>
 </li>
 </ul>
 <button type="button" @onclick="@( async () => await DeleteStoreAsync(singleStore))">X</button>

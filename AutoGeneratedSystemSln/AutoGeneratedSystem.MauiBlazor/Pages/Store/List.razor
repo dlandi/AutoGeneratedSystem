@@ -16,7 +16,8 @@ foreach (var singleStore in this.AllStore)
 <ul class="list-group">
 <li class="list-group-item">
 @(nameof(singleStore.StoreId).Humanize().Titleize()):@singleStore.StoreId <br>
-@(nameof(singleStore.StoreName).Humanize().Titleize()):@singleStore.StoreName <br>
+@(nameof(singleStore.Name).Humanize().Titleize()):@singleStore.Name <br>
+@(nameof(singleStore.ImageUrl).Humanize().Titleize()):@singleStore.ImageUrl <br>
 <button type="button" @onclick="@( async () => await DeleteStoreAsync(singleStore))">X</button>
 </li>
 </ul>

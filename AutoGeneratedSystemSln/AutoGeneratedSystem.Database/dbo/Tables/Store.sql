@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Store]
 (
 	[StoreId] BIGINT NOT NULL CONSTRAINT PK_Store PRIMARY KEY IDENTITY, 
-    [StoreName] NVARCHAR(50) NOT NULL
+    [Name] NVARCHAR(50) NOT NULL, 
+    [ImageUrl] NVARCHAR(500) NOT NULL
 )

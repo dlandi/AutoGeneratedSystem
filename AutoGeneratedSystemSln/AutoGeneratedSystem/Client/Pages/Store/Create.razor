@@ -12,8 +12,12 @@ title="@("List Store".Humanize().Titleize())">
 <ValidationSummary></ValidationSummary>
 </div>
 <div class="mb-3">
-<label class="form-label">@(nameof(Model.StoreName).Humanize().Titleize())</label>
-<InputText class="form-control" @bind-Value="Model.StoreName"/>
+<label class="form-label">@(nameof(Model.Name).Humanize().Titleize())</label>
+<InputText class="form-control" @bind-Value="Model.Name"/>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ImageUrl).Humanize().Titleize())</label>
+<InputText class="form-control" @bind-Value="Model.ImageUrl"/>
 </div>
 <div class="mb-3">
 <button class="btn btn-primary" type="submit">Submit</button>
