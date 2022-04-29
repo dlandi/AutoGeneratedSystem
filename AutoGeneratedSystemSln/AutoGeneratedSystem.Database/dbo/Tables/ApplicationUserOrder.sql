@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ApplicationUserOrder]
 (
-	[ApplicationuserOrderId] BIGINT NOT NULL CONSTRAINT PK_ApplicationUserOrder PRIMARY KEY IDENTITY, 
+	[ApplicationUserOrderId] BIGINT NOT NULL CONSTRAINT PK_ApplicationUserOrder PRIMARY KEY IDENTITY, 
     [ApplicationUserId] BIGINT NOT NULL, 
     [OrderTotal] MONEY NOT NULL, 
     [OrderDate] DATETIMEOFFSET NOT NULL DEFAULT GetUtcDate(), 

@@ -1,0 +1,41 @@
+<h3>@("ApplicationUserOrder".Pluralize().Humanize().Titleize())</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationUserOrder"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create ApplicationUserOrder">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
+@if (this.AllApplicationUserOrder != null)
+{
+foreach (var singleApplicationUserOrder in this.AllApplicationUserOrder)
+{
+<ul class="list-group">
+<li class="list-group-item">
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrder.ApplicationUserOrderId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrder.ApplicationUserOrderId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrder.ApplicationUserId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrder.ApplicationUserId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrder.OrderTotal).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrder.OrderTotal</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrder.OrderDate).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrder.OrderDate</span>
+</li>
+</ul>
+<button type="button" @onclick="@( async () => await DeleteApplicationUserOrderAsync(singleApplicationUserOrder))">X</button>
+</li>
+</ul>
+}
+}
+</div>
