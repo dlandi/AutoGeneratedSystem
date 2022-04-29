@@ -4,6 +4,11 @@
     {
         public static class PageRoutes
         {
+            public static class ApplicationUserOrderDetailRoutes
+            {
+                public const string Create = "/ApplicationUserOrderDetail/Create";
+                public const string List = "/ApplicationUserOrderDetail/List";
+            }
             public static class ApplicationUserOrderRoutes
             {
                 public const string Create = "/ApplicationUserOrder/Create";
@@ -49,6 +54,7 @@
             public const string ApplicationUserApplicationRole = nameof(ApplicationUserApplicationRole);
             public const string Product = nameof(Product);
             public const string ApplicationUserOrder = nameof(ApplicationUserOrder);
+            public const string ApplicationUserOrderDetail = nameof(ApplicationUserOrderDetail);
         }
     }
 }

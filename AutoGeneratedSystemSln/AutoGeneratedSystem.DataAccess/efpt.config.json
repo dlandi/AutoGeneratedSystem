@@ -30,6 +30,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[ApplicationUserOrderDetail]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Company]",
          "ObjectType": 0
       },

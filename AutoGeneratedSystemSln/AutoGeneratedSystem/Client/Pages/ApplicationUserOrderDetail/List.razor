@@ -1,0 +1,45 @@
+<h3>@("ApplicationUserOrderDetail".Pluralize().Humanize().Titleize())</h3>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<div class="mb-3">
+<button type="button" class="btn btn-info rounded-circle"
+@onclick="@(() => NavigationHelper.NavigateToCreatePageForEntity(this.NavigationManager,"ApplicationUserOrderDetail"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="Create ApplicationUserOrderDetail">
+<i class="bi bi-plus-circle-fill" style="font-size:large"></i>
+</button>
+</div>
+<div class="mb-3">
+@if (this.AllApplicationUserOrderDetail != null)
+{
+foreach (var singleApplicationUserOrderDetail in this.AllApplicationUserOrderDetail)
+{
+<ul class="list-group">
+<li class="list-group-item">
+<ul class="list-group">
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrderDetail.ApplicationUserOrderDetailId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrderDetail.ApplicationUserOrderDetailId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrderDetail.ApplicationUserOrderId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrderDetail.ApplicationUserOrderId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrderDetail.ProductId).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrderDetail.ProductId</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrderDetail.Quantity).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrderDetail.Quantity</span>
+</li>
+<li class="list-group-item">
+<label class="form-label"><strong>@(nameof(singleApplicationUserOrderDetail.LineTotal).Humanize().Titleize())</strong></label>
+<span>@singleApplicationUserOrderDetail.LineTotal</span>
+</li>
+</ul>
+<button type="button" @onclick="@( async () => await DeleteApplicationUserOrderDetailAsync(singleApplicationUserOrderDetail))">X</button>
+</li>
+</ul>
+}
+}
+</div>

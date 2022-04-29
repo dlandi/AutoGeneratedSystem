@@ -1,0 +1,51 @@
+<h3>@("ApplicationUserOrderDetail".Humanize().Titleize())</h3>
+<button type="button" class="btn btn - info rounded - circle"
+@onclick="@(() => NavigationHelper.NavigateToListPageForEntity(this.NavigationManager,"ApplicationUserOrderDetail"))"
+data-bs-toggle="tooltip" data-bs-placement="top"
+title="@("List ApplicationUserOrderDetail".Humanize().Titleize())">
+<i class="bi bi-list" style="font-size:large"></i>
+</button>
+<LoadingIndicator IsLoading="IsLoading"></LoadingIndicator>
+<EditForm Model="@this.Model" OnValidSubmit="OnValidSubmitAsync">
+<div class="mb-3">
+<DataAnnotationsValidator></DataAnnotationsValidator>
+<ValidationSummary></ValidationSummary>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.Quantity).Humanize().Titleize())</label>
+<InputNumber class="form-control" @bind-Value="Model.Quantity"/>
+</div>
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.LineTotal).Humanize().Titleize())</label>
+<InputNumber class="form-control" @bind-Value="Model.LineTotal"/>
+</div>
+@if (this.ApplicationUserOrderModelItems != null)
+{
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ApplicationUserOrderId).Humanize().Titleize())</label>
+<InputSelect class="form-control" @bind-Value="Model.ApplicationUserOrderId">
+<option value="">Select ApplicationUserOrder...</option>
+@foreach (var singleApplicationUserOrderItem in this.ApplicationUserOrderModelItems)
+{
+<option value="@singleApplicationUserOrderItem.ApplicationUserOrderId">@singleApplicationUserOrderItem.ApplicationUserOrderId</option>
+}
+</InputSelect>
+</div>
+}
+@if (this.ProductModelItems != null)
+{
+<div class="mb-3">
+<label class="form-label">@(nameof(Model.ProductId).Humanize().Titleize())</label>
+<InputSelect class="form-control" @bind-Value="Model.ProductId">
+<option value="">Select Product...</option>
+@foreach (var singleProductItem in this.ProductModelItems)
+{
+<option value="@singleProductItem.ProductId">@singleProductItem.Name</option>
+}
+</InputSelect>
+</div>
+}
+<div class="mb-3">
+<button class="btn btn-primary" type="submit">Submit</button>
+</div>
+</EditForm>
